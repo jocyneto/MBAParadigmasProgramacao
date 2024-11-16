@@ -1,31 +1,41 @@
-def soma(a,b):
-    return a+b
+# === Funções puras ===
 
-# print(soma(2,3))
-# print(soma(2,3))
+# Exemplo de uma função pura que soma dois números
+def soma(a, b):
+    return a + b  # Sempre retorna o mesmo resultado para as mesmas entradas
 
+# Testando a função pura
+print(soma(3, 4))  # Saída: 7
+print(soma(3, 4))  # Saída: 7
+# Observação: A função 'soma' é pura porque não tem efeitos colaterais e sempre produz o mesmo resultado.
+
+# === Funções de alta ordem ===
+
+# Exemplo de uma função de alta ordem que aplica uma função duas vezes a um valor
 def aplicar_duas_vezes(func, valor):
-    return func(func(valor))
+    return func(func(valor))  # Chama a função 'func' duas vezes, passando o resultado da primeira chamada como entrada para a segunda
 
+# Função que incrementa um número
 def incrementar(x):
-    return x + 1
+    return x + 1  # Retorna o número incrementado em 1
 
-def elevar_ao_quadrado(x):
-    return x ** 2
+# Aplica a função 'incrementar' duas vezes ao valor 5
+print(aplicar_duas_vezes(incrementar, 5))  # Saída: 7
+# Explicação: O valor 5 é incrementado para 6 na primeira aplicação e para 7 na segunda.
 
-# print(incrementar(7))
-
-print(aplicar_duas_vezes(incrementar, 1))
-
-numeros = list(range(1,7))
-
+# Função que aplica uma transformação a cada elemento de uma lista
 def aplicar_transformacao(funcao, lista):
-    return [funcao(x) for x in lista] #list compreension
-    # lista_transformada = []
-    # for item in lista:
-    #     item_transformado.append(funcao(x))
-    # return lista_transformadas
+    # Utiliza compreensão de listas para aplicar 'funcao' a cada elemento de 'lista'
+    return [funcao(x) for x in lista]  # Retorna uma nova lista com a transformação aplicada
 
-numeros_quadradao = aplicar_transformacao(elevar_ao_quadrado, numeros)
+# Função de transformação: eleva um número ao quadrado
+def elevar_ao_quadrado(x):
+    return x ** 2  # Retorna o quadrado do número
 
-print(numeros_quadradao)
+# Lista de números para transformação
+numeros = [1, 2, 3, 4, 5]
+
+# Aplicando a transformação que eleva cada número ao quadrado
+numeros_quadrados = aplicar_transformacao(elevar_ao_quadrado, numeros)
+print(numeros_quadrados)  # Saída: [1, 4, 9, 16, 25]
+# Comentário: A função 'aplicar_transformacao' utiliza 'elevar_ao_quadrado' para transformar cada elemento da lista 'numeros'.

@@ -24,21 +24,6 @@ Este repositório contém dois ambientes distintos para a execução dos serviç
 │   │   └── docker-compose.yaml
 │   ├── reativa/
 │   │   └── docker-compose.yaml
-├── referencial/
-│   ├── concorrente/
-│   │   └── docker-compose.yaml
-│   ├── declarativo/
-│   │   └── docker-compose.yaml
-│   ├── funcional/
-│   │   └── docker-compose.yaml
-│   ├── imperativo/
-│   │   └── docker-compose.yaml
-│   ├── logico/
-│   │   └── docker-compose.yaml
-│   ├── orientado-objeto/
-│   │   └── docker-compose.yaml
-│   ├── reativa/
-│   │   └── docker-compose.yaml
 └── README.md
 ```
 
